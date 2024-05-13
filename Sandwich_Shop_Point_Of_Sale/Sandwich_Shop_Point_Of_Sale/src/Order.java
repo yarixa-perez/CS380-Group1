@@ -52,12 +52,12 @@ public class Order {
 
     /**
      * Adds an item to the order, given a ProductType object.
-     * @param productType A ProductType object.
+     * @param product A ProductType object.
      */
-    public void addItem(ProductType productType) {
+    public void addItem(Product product) {
         // Create Item object from productType and add to items
         // Assuming ProductType has a getPrice() method
-        Item item = new Item(productType.getName(), productType.getPrice());
+        Item item = new Item(product.getName(), product.getPrice());
         items.add(item);
     }
 
