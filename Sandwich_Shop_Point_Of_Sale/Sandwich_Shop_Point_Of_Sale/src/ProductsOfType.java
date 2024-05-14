@@ -36,14 +36,13 @@ public class ProductsOfType {
         return products.get(id);
     }
 
-    /*
+    /**
+     * Get the set of Products contained in the products map as an array of Products
+     * @return array of Products
+     */
     public Product[] getProducts() {
-        products.
-
-        for(Integer key : keySet) {
-
-        }
+        return (Product[]) products.values().toArray();
     }
-    * */
+
 
 }
