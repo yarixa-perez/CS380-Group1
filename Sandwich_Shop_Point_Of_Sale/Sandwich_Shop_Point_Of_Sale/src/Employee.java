@@ -18,4 +18,7 @@ public class Employee extends Person{
         this.position = position;
         this.wage = wage;
     }
+    public int getEmployeeNum(){
+        return employeeNumber;
+    }
 }
