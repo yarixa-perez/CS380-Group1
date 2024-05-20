@@ -1,45 +1,36 @@
-
+/**
+ * Represents an Item ordered by the Customer. Retrieves the type, name, and price
+ * of an Item from the Product class.
+ */
 public class Item {
 
     // Fields
-    private ProductType type;
+    private Product product;
     private String name;
     private float price;
 
-
     /**
      * Constructor for an Item object
-     * @param type The type of product an Item object
-     * @param name The name of an Item object
-     * @param price The price of an Item object
+     * @param product The type of product an Item Object is
      */
-    public Item(ProductType type, String name, float price) {
-        this.type = type;
-        this.name = name;
-        this.price = price;
+    public Item(Product product) {
+        this.name = product.getName();
+        this.price = product.getPrice();
     }
 
     /**
-     * Getter method for an Item's name
+     * Getter method for name field
      * @return The name of an Item object
      */
     public String getName() {
-        return name;
+        return this.name;
     }
 
     /**
-     * Getter method for an Item's type
-     * @return An ItemType enum value (Side, Drink, Sandwich)
-     */
-    public ProductType getType() {
-        return type;
-    }
-
-    /**
-     * Getter method for an Item's price
+     * Getter method for price field
      * @return The price of an Item object
      */
     public float getPrice() {
-        return price;
+        return this.price;
     }
 }
