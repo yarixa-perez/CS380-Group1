@@ -78,32 +78,4 @@ public class Order {
     }
 
     // Other methods can be added as needed
-
-
-
-
-
-    // ALL CLASSES BELOW ARE FOR REFERENCE AND WILL BE DELETED LATER
-
-    private class Employee {
-        // Employee attributes and methods
-    }
-
-    private class Customer {
-        // Customer attributes and methods
-    }
-
-    private class Item {
-        private String name;
-        private float price;
-
-        public Item(String name, float price) {
-            this.name = name;
-            this.price = price;
-        }
-
-        public float getPrice() {
-            return price;
-        }
-    }
 }
