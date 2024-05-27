@@ -16,6 +16,29 @@ public class Person {
         this.DOB = DOB;
     }
 
+    public Person() {
+
+    }
+
+    public String getFirst(){
+        return firstName;
+    }
+    public void setFirst(String firstName){
+        this.firstName = firstName;
+    }
+    public String getLast(){
+        return lastName;
+    }
+    public void setLast(String lastName){
+        this.lastName = lastName;
+    }
+    public LocalDate getDOB(){
+        return DOB;
+    }
+    public void setDOB(LocalDate DOB){
+        this.DOB = DOB;
+    }
+
     /**
      * Method to return a persons information as a string
      * @return Person information
