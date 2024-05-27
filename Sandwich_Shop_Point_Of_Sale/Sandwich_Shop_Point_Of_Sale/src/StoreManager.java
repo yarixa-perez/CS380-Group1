@@ -1,0 +1,53 @@
+/**
+ * Represents a manager of a specific store.
+ */
+public class StoreManager {
+
+    // Fields
+    private String storeManager;
+    private int storeNumber;
+    // private Owner owner;
+    // private Manager generalManager;
+
+    /**
+     * Constructor for StoreManager object
+     * @param storeManager The name of the store manager
+     * @param storeNumber The number of the store
+     */
+    public StoreManager(String storeManager, int storeNumber) {
+        this.storeManager = storeManager;
+        this.storeNumber = storeNumber;
+    }
+
+    /**
+     * Setter method for store manager
+     * @param storeManager The manager of a particular store
+     */
+    public void setStoreManager(String storeManager) {
+        this.storeManager = storeManager;
+    }
+
+    /**
+     * Getter method for store manager
+     * @return The name of the store manager
+     */
+    public String getStoreManager() {
+        return storeManager;
+    }
+
+    /**
+     * Setter method for store number
+     * @param storeNumber The number of a particular store
+     */
+    public void setStoreNumber(int storeNumber) {
+        this.storeNumber = storeNumber;
+    }
+
+    /**
+     * Getter method for store number
+     * @return The number of the store
+     */
+    public int getStoreNumber() {
+        return storeNumber;
+    }
+}
