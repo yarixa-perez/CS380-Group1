@@ -7,18 +7,17 @@ package cs380group1.sandwich_shop;
 public class Item {
 
     // Fields
-    private Product product;
     private String name;
     private float price;
 
     /**
      * Constructor for an Item object
-     * @param product The type of product an Item Object is
+     * @param name The name of an Item object
+     * @param price The price of an Item object
      */
-    public Item(Product product) {
-        this.product = product;
-        this.name = product.getName();
-        this.price = product.getPrice();
+    public Item(String name, float price) {
+        this.name = name;
+        this.price = price;
     }
 
     /**
@@ -26,7 +25,7 @@ public class Item {
      * @return The name of an Item object
      */
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**
@@ -34,6 +33,6 @@ public class Item {
      * @return The price of an Item object
      */
     public float getPrice() {
-        return this.price;
+        return price;
     }
 }
