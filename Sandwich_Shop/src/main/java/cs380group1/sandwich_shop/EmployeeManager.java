@@ -1,3 +1,5 @@
+package cs380group1.sandwich_shop;
+
 import java.util.*;
 public class EmployeeManager {
     private ArrayList<Employee> employeeList = new ArrayList<Employee>();

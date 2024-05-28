@@ -1,3 +1,5 @@
+package cs380group1.sandwich_shop;
+
 import java.time.LocalDate;
 public class Customer extends Person{
     private int customerNumber;

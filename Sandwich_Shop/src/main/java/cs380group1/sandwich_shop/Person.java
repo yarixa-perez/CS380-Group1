@@ -1,3 +1,5 @@
+package cs380group1.sandwich_shop;
+
 import java.time.LocalDate;
 public class Person {
     protected String firstName;

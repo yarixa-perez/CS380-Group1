@@ -1,3 +1,5 @@
+package cs380group1.sandwich_shop;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;

@@ -1,3 +1,5 @@
+package cs380group1.sandwich_shop;
+
 /**
  * Represent a product offered by the business. Contains all relevant info about a product
  * as well as its availability.

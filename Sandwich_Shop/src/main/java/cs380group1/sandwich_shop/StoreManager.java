@@ -1,3 +1,5 @@
+package cs380group1.sandwich_shop;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

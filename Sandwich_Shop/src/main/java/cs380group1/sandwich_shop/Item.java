@@ -1,3 +1,5 @@
+package cs380group1.sandwich_shop;
+
 /**
  * Represents an Item ordered by the Customer. Retrieves the type, name, and price
  * of an Item from the Product class.
