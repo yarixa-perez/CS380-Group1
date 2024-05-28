@@ -1,13 +1,26 @@
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
 /**
- * Represents a manager of a specific store.
+ * This is the main application class of this project.
+ * There will be a driver class that will call this class to begin execution.
  */
-public class StoreManager {
+public class StoreManager extends Application{
 
     // Fields
     private String storeManager;
     private int storeNumber;
-    // private Owner owner;
-    // private Manager generalManager;
+
+    public void start(Stage stage) throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader()
+    }
 
     /**
      * Constructor for StoreManager object

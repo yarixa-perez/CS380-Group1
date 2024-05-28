@@ -14,6 +14,7 @@ public class Item {
      * @param product The type of product an Item Object is
      */
     public Item(Product product) {
+        this.product = product;
         this.name = product.getName();
         this.price = product.getPrice();
     }
