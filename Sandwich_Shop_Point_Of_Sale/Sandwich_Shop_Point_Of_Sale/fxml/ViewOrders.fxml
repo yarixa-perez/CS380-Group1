@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #cbffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="14.0" layoutY="89.0" prefHeight="500.0" prefWidth="775.0">
+        <columns>
+          <TableColumn fx:id="EmployeeNumberCol" editable="false" prefWidth="150.0" text="Employee Number" />
+          <TableColumn fx:id="PositionCol" editable="false" prefWidth="75.0" text="Position" />
+            <TableColumn fx:id="WageCol" editable="false" prefWidth="75.0" text="Wage" />
+            <TableColumn fx:id="FirstNameCol" editable="false" prefWidth="150.0" text="First Name" />
+            <TableColumn fx:id="LastNameCol" editable="false" prefWidth="150.0" text="Last Name" />
+            <TableColumn fx:id="DOBCol" editable="false" prefWidth="150.0" text="Date of Birth" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="19.0" prefHeight="50.0" prefWidth="775.0" text="List of Employee's Info">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
