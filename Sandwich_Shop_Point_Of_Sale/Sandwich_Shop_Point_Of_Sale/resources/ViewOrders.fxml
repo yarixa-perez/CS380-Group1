@@ -11,15 +11,14 @@
    <children>
       <TableView layoutX="14.0" layoutY="89.0" prefHeight="500.0" prefWidth="775.0">
         <columns>
-          <TableColumn fx:id="EmployeeNumberCol" editable="false" prefWidth="150.0" text="Employee Number" />
-          <TableColumn fx:id="PositionCol" editable="false" prefWidth="75.0" text="Position" />
-            <TableColumn fx:id="WageCol" editable="false" prefWidth="75.0" text="Wage" />
-            <TableColumn fx:id="FirstNameCol" editable="false" prefWidth="150.0" text="First Name" />
-            <TableColumn fx:id="LastNameCol" editable="false" prefWidth="150.0" text="Last Name" />
-            <TableColumn fx:id="DOBCol" editable="false" prefWidth="150.0" text="Date of Birth" />
+          <TableColumn fx:id="CashierCol" editable="false" prefWidth="150.0" text="Cashier" />
+          <TableColumn fx:id="CustomerCol" editable="false" prefWidth="150.0" text="Customer" />
+            <TableColumn fx:id="DiscountCol" editable="false" prefWidth="150.0" text="Discount" />
+            <TableColumn fx:id="ItmesCol" editable="false" prefWidth="150.0" text="Items" />
+            <TableColumn fx:id="OrderNumberCol" editable="false" prefWidth="150.0" text="Order #" />
         </columns>
       </TableView>
-      <Label alignment="CENTER" layoutX="14.0" layoutY="19.0" prefHeight="50.0" prefWidth="775.0" text="List of Employee's Info">
+      <Label alignment="CENTER" layoutX="14.0" layoutY="19.0" prefHeight="50.0" prefWidth="775.0" text="Today's Orders">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
