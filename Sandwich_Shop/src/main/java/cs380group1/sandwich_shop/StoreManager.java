@@ -14,14 +14,14 @@ import javafx.stage.Stage;
  * This is the main application class of this project.
  * There will be a driver class that will call this class to begin execution.
  */
-public class StoreManager extends Application{
+public class StoreManager extends Application {
 
     // Fields
     private String storeManager;
     private int storeNumber;
 
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader()
+        FXMLLoader fxmlLoader = new FXMLLoader();
     }
 
     /**
