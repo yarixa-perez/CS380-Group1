@@ -216,5 +216,53 @@ public class Database {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Method to add a product to the database
+     * @param itemName
+     * @param itemNum
+     * @param itemType
+     * @param price
+     * @param available
+     * @param description
+     */
+    public void addProduct(String itemName, int itemNum, String itemType, float price, boolean available, String description){
+        String query = "INSERT INTO mainmenu(itemName, itemNum, itemType, price, inStock, description) VALUES (?, ?, ?, ?, ?, ?)";
+        try (Connection connection = connect();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, itemName);
+            statement.setInt(2, itemNum);
+            statement.setString(3, itemType);
+            statement.setFloat(4, price);
+            statement.setBoolean(5, available);
+            statement.setString(6, description);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Method to add a customers order to the database
+     * @param customerNumber
+     * @param orderNumber
+     * @param orderDate
+     * @param total
+     * @param employeeNumber
+     */
+    public void addOrder(int customerNumber, int orderNumber, LocalDate orderDate, float total, int employeeNumber){
+        String query = "INSERT INTO orders(custID, orderNum, orderDate, orderTotal, orderTakerID) VALUES (?, ?, ?, ?, ?)";
+        try (Connection connection = connect();
+            PreparedStatement statement = connection.prepareStatement(query)){
+            statement.setInt(1, customerNumber);
+            statement.setInt(2, orderNumber);
+            statement.setDate(3, Date.valueOf(orderDate));
+            statement.setFloat(4, total);
+            statement.setInt(5, employeeNumber);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 }
 
