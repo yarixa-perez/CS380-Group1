@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orderscreen.OrderController">
+    <left>
+        <VBox>
+            <Label text="Available Items"/>
+            <ListView fx:id="itemListView" onMouseClicked="#handleAddItem">
+                <!-- List items will be added programmatically in the controller -->
+            </ListView>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Cart"/>
+            <TableView fx:id="cartTable">
+                <columns>
+                    <TableColumn text="Item Name" fx:id="itemNameColumn"/>
+                    <TableColumn text="Quantity" fx:id="itemQuantityColumn"/>
+                    <TableColumn text="Price" fx:id="itemPriceColumn"/>
+                </columns>
+            </TableView>
+            <Button text="Checkout" onAction="#handleCheckout"/>
+        </VBox>
+    </center>
+</BorderPane>
