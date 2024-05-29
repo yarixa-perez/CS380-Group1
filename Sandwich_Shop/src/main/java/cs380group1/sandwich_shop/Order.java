@@ -19,6 +19,9 @@ public class Order {
     private LocalDateTime orderDate;
     // Order ID - for tracking in database
     private int orderNumber;
+    private int cashierNum;
+    private int customerNum;
+    private float total;
 
     // Order Constructor
     public Order(Employee cashier, Customer customer, float discountMult, int orderNumber) {
@@ -28,6 +31,24 @@ public class Order {
         this.items = new ArrayList<Item>();
         this.orderDate = LocalDateTime.now(); // Current date and time
         this.orderNumber = orderNumber;
+    }
+    public void setOrderDate(LocalDateTime orderDate){
+        this.orderDate = orderDate;
+    }
+    public void setOrderNum(int orderNumber){
+        this.orderNumber = orderNumber;
+    }
+    public void setCashierNum(int cashierNum){
+        this.cashierNum = cashierNum;
+    }
+    public void setCustomerNum(int customerNum){
+        this.customerNum = customerNum;
+    }
+    public void setTotal(float total){
+        this.total = total;
+    }
+    public Order() {
+
     }
 
     /**

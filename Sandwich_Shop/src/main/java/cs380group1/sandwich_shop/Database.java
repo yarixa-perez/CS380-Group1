@@ -245,6 +245,61 @@ public class Database {
     }
 
     /**
+     * Method to retrieve a product from the database
+     * @param itemNum
+     * @return
+     */
+    public Product retrieveProduct(int itemNum){
+        String query = "SELECT * FROM mainmenu WHERE itemNum = ?";
+        Product product = new Product();
+        try (Connection connection = connect();
+             PreparedStatement statement = connection.prepareStatement(query)){
+            statement.setInt(1, itemNum);
+            ResultSet result = statement.executeQuery();
+            if (result.next()){
+                product.setName(result.getString("itemName"));
+                product.setID(result.getInt("itemNum"));
+                product.setType(result.getString("itemType"));
+                product.setPrice(result.getFloat("price"));
+                product.setAvailable(result.getBoolean("inStock"));
+                product.setDesc(result.getString("description"));
+                return product;
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * Method to retrieve all products from the database
+     * @return
+     */
+    public List<Product> retrieveAllProducts(){
+        List<Product> products = new ArrayList<>();
+        String query = "SELECT * FROM mainmenu";
+        try (Connection connection = connect();
+             Statement statement = connection.createStatement();
+             ResultSet result = statement.executeQuery(query)){
+            while (result.next()){
+                Product product = new Product();
+                product.setName(result.getString("itemName"));
+                product.setID(result.getInt("itemNum"));
+                product.setType(result.getString("itemType"));
+                product.setPrice(result.getFloat("price"));
+                product.setAvailable(result.getBoolean("inStock"));
+                product.setDesc(result.getString("description"));
+                products.add(product);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return products;
+    }
+
+
+
+    /**
      * Method to add a customers order to the database
      * @param customerNumber
      * @param orderNumber
@@ -266,5 +321,71 @@ public class Database {
         }
     }
 
+    /**
+     * Method to retrieve an order from the database
+     * @param orderNumber
+     * @return
+     */
+    public Order retrieveOrder(int orderNumber){
+        String query = "SELECT * FROM orders WHERE orderNum = ?";
+        Order order = new Order();
+        try (Connection connection = connect();
+             PreparedStatement statement = connection.prepareStatement(query)){
+            statement.setInt(1, orderNumber);
+            ResultSet result = statement.executeQuery();
+            if (result.next()){
+                order.setOrderNum(result.getInt("orderNum"));
+                order.setOrderDate(result.getDate(Date.valueOf("orderDate")));
+                order.setCashierNum(result.getInt("orderTakerID"));
+                order.setCustomerNum(result.getInt("custID"));
+                order.setTotal(result.getFloat("orderTotal"));
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Method to retrieve all orders from the database
+     * @return
+     */
+    public List<Order> retrieveAllOrders(){
+        List<Order> orders = new ArrayList<>();
+        String query = "SELECT * FROM orders";
+        try (Connection connection = connect();
+             Statement statement = connection.createStatement();
+             ResultSet result = statement.executeQuery(query)){
+            while (result.next()){
+                Order order = new Order();
+                order.setOrderNum(result.getInt("orderNum"));
+                order.setOrderDate(result.getDate(Date.valueOf("orderDate")));
+                order.setCashierNum(result.getInt("orderTakerID"));
+                order.setCustomerNum(result.getInt("custID"));
+                order.setTotal(result.getFloat("orderTotal"));
+                orders.add(order);
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return orders;
+    }
+    /**
+     * Method to add details about an individual item within an order
+     * @param orderNum
+     * @param productNum
+     * @param quantity
+     */
+    public void addOrderItem(int orderNum, int productNum, int quantity){
+        String query = "INSERT INTO orderitems(quantity, orderNum, itemNum) VALUES (?, ?, ?)";
+        try (Connection connection = connect();
+             PreparedStatement statement = connection.prepareStatement(query)){
+            statement.setInt(1, quantity);
+            statement.setInt(2, orderNum);
+            statement.setInt(3, productNum);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
 

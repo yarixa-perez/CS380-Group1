@@ -18,15 +18,27 @@ public class Product {
      * @param t the type of the product
      * @param pri the price of the product
      */
-    public Product(int id, String n, String des, float pri) {
+    public Product(int id, String n, String des, String t, float pri, boolean available) {
         idNumber = id;
         name = n;
         description = des;
         price = pri;
+        type = t;
+        this.available = available;
     }
 
+    public Product() {
+
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
     public String getName() {
         return name;
+    }
+    public void setDesc(String description){
+        this.description = description;
     }
 
     public String getDescription() {
@@ -59,5 +71,8 @@ public class Product {
 
     public int getIdNumber() {
         return idNumber;
+    }
+    public void setID(int ID){
+        idNumber = ID;
     }
 }
