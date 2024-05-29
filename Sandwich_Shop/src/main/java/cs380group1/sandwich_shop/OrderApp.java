@@ -1,12 +1,16 @@
 package cs380group1.sandwich_shop;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -21,41 +25,14 @@ public class OrderApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Initialize an Order (sample data for testing)
-        Employee cashier = new Employee("CashierName");
-        Customer customer = new Customer("CustomerName");
-        order = new Order(cashier, customer, 0.9f, 1);
-
-        // Initialize UI elements
-        orderListView = new ListView<>();
-        totalLabel = new Label("Total: $0.00");
-
-        // Set up layout
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(10));
-
-        // Add item controls
-        TextField itemNameField = new TextField();
-        itemNameField.setPromptText("Item Name");
-        TextField itemPriceField = new TextField();
-        itemPriceField.setPromptText("Item Price");
-        Button addItemButton = new Button("Add Item");
-        addItemButton.setOnAction(e -> addItem(itemNameField.getText(), itemPriceField.getText()));
-
-        HBox addItemBox = new HBox(10, itemNameField, itemPriceField, addItemButton);
-
-        // Remove item controls
-        Button removeItemButton = new Button("Remove Selected Item");
-        removeItemButton.setOnAction(e -> removeSelectedItem());
-
-        // Add elements to layout
-        layout.getChildren().addAll(addItemBox, orderListView, removeItemButton, totalLabel);
-
-        // Set up and show scene
-        Scene scene = new Scene(layout, 400, 300);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Order Management");
-        primaryStage.show();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("WelcomeScreen.fxml"));
+            primaryStage.setTitle("Sandwich Shop");
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void addItem(String name, String price) {
