@@ -9,13 +9,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class EmployeeMenuController {
+public class EmployeeMenuController extends ControllerInterface{
 
     @FXML
     private Button BeginOrderButton;
     private Button ClockInButton;
     private Button ClockOutButton;
     private Button EmployeeInformationButton;
+
+    
 
     @FXML
     void BeginOrder(ActionEvent event) {
@@ -24,12 +26,16 @@ public class EmployeeMenuController {
 
     @FXML
     void ClockIn(ActionEvent event) {
-
+        app.getCurrentEmployee().clockIn();
+        ClockOutButton.setDisable(false);
+        ClockInButton.setDisable(true);
     }
 
     @FXML
     void ClockOut(ActionEvent event) {
-
+        app.getCurrentEmployee().clockOut();
+        ClockOutButton.setDisable(true);
+        ClockInButton.setDisable(false);
     }
 
     @FXML

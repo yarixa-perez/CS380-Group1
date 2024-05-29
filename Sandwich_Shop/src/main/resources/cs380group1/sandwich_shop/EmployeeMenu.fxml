@@ -11,7 +11,7 @@
             <Font size="48.0" />
          </font>
       </Button>
-      <Button fx:id="ClockOutButton" disable="true" layoutX="425.0" layoutY="225.0" mnemonicParsing="false" onAction="#ClockOut" prefHeight="150.0" prefWidth="300.0" style="-fx-border-width: 2; -fx-border-color: #000000; -fx-background-color: #BBBBBB;" text="Clock out">
+      <Button fx:id="ClockOutButton" layoutX="425.0" layoutY="225.0" mnemonicParsing="false" onAction="#ClockOut" prefHeight="150.0" prefWidth="300.0" style="-fx-border-width: 2; -fx-border-color: #000000; -fx-background-color: #FFFFFF;" text="Clock out">
          <font>
             <Font size="48.0" />
          </font>

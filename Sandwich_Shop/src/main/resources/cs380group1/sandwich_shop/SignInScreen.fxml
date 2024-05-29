@@ -18,7 +18,7 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <PasswordField fx:id="PasswordField" layoutX="28.0" layoutY="300.0" promptText="Employee PIN" style="-fx-border-color: #000000; -fx-border-width: 2;">
+      <PasswordField fx:id="PasswordField" layoutX="28.0" layoutY="300.0" onKeyPressed="#HandleKeyPress" promptText="Employee PIN" style="-fx-border-color: #000000; -fx-border-width: 2;">
          <font>
             <Font size="48.0" />
          </font>

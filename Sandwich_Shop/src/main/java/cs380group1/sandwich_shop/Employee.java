@@ -1,10 +1,15 @@
 package cs380group1.sandwich_shop;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Employee extends Person{
     protected int employeeNumber;
     protected String position;
     protected float wage;
+    protected boolean clockedIn;
+    protected LocalDateTime lastClockInTime;
+    protected LocalDateTime lastClockOutTime;
 
     /**
      * The constructor for the employee class
@@ -49,5 +54,20 @@ public class Employee extends Person{
                 "Employee Number: " + employeeNumber + " " +
                 "Position: " + position + " " +
                 "Wage: " + wage;
+    }
+
+    public void clockIn() {
+        clockedIn = true;
+        lastClockInTime = LocalDateTime.now();
+    }
+
+    public void clockOut() {
+        clockedIn = false;
+        lastClockOutTime = LocalDateTime.now();
+
+    }
+
+    public boolean getClockedIn() {
+        return clockedIn;
     }
 }
