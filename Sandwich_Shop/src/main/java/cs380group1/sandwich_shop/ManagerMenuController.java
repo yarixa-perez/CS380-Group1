@@ -13,9 +13,13 @@ public class ManagerMenuController {
 
     @FXML
     private Button EmployeeMenuButton;
+    @FXML
     private Button ViewDailyReportButton;
+    @FXML
     private Button ViewEmployeeInfoButton;
+    @FXML
     private Button ViewStockButton;
+    @FXML
     private Button ViewTodaysOrdersButton;
 
     @FXML

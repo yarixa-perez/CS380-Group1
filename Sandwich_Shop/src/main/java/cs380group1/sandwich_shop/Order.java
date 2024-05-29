@@ -100,5 +100,9 @@ public class Order {
         return items;
     }
 
+    public int getOrderNumber() {
+        return orderNumber;
+    }
+
     // Other methods can be added as needed
 }

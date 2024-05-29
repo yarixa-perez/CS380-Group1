@@ -335,7 +335,7 @@ public class Database {
             ResultSet result = statement.executeQuery();
             if (result.next()){
                 order.setOrderNum(result.getInt("orderNum"));
-                order.setOrderDate(result.getDate(Date.valueOf("orderDate")));
+                //order.setOrderDate(result.getDate(Date.valueOf("orderDate")));
                 order.setCashierNum(result.getInt("orderTakerID"));
                 order.setCustomerNum(result.getInt("custID"));
                 order.setTotal(result.getFloat("orderTotal"));
@@ -344,6 +344,7 @@ public class Database {
             e.printStackTrace();
         }
 
+        return order;
     }
 
     /**
@@ -359,7 +360,7 @@ public class Database {
             while (result.next()){
                 Order order = new Order();
                 order.setOrderNum(result.getInt("orderNum"));
-                order.setOrderDate(result.getDate(Date.valueOf("orderDate")));
+                //order.setOrderDate(result.getDate(Date.valueOf("orderDate")));
                 order.setCashierNum(result.getInt("orderTakerID"));
                 order.setCustomerNum(result.getInt("custID"));
                 order.setTotal(result.getFloat("orderTotal"));
