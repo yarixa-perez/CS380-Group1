@@ -17,7 +17,22 @@ public class EmployeeMenuController extends ControllerInterface{
     private Button ClockOutButton;
     private Button EmployeeInformationButton;
 
-    
+    /*
+    @FXML
+    public void initialize() {
+        System.out.println("We made it here");
+        if(app.getCurrentEmployee().getClockedIn() == true) {
+            System.out.println("We made it here");
+            ClockOutButton.setDisable(false);
+            ClockInButton.setDisable(true);
+        }
+
+        else {
+            ClockOutButton.setDisable(true);
+            ClockInButton.setDisable(false);
+        }
+    }
+    * */
 
     @FXML
     void BeginOrder(ActionEvent event) {
